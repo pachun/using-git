@@ -14,7 +14,11 @@ This post doesn't explain why this is helpful. It only shows you how to acheive 
 
 ## TL;DR
 
-There's a more in-depth explanation of each of the following steps below this section.
+> every merge commit is a potential source of a non-linear history
+
+Avoid merge commits.
+
+[There's a more in-depth explanation of each of the following steps below this section](#beginning-new-features).
 
 If you're just interested in getting started, here's what you need:
 
