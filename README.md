@@ -190,7 +190,7 @@ This will automatically open a new file, where you're given the opportunity to w
 
 ![reword commit message prompt](https://i.imgur.com/kn3QRK2.png)
 
-See [how to write a git commit messages](https://chris.beams.io/posts/git-commit/) for info regarding how to best write these.
+See [how to write a git commit messages](https://chris.beams.io/posts/git-commit/) for how to best write these.
 
 We'll settle on this:
 
