@@ -70,6 +70,17 @@ git add <filename-with-resolved-rebase-conflicts>   # mark the conflicting files
 git add <filename-with-resolved-rebase-conflicts>   # resolved
 
 git rebase --continue
+
+git push origin <feature-branch-name>               # push your branch up to Github
+
+# open a pull request on github
+
+# Ready to merge?
+
+git checkout master
+git merge feature-branch-name
+git push origin master
+
 ```
 
 ## GITX
