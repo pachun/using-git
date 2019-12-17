@@ -141,7 +141,7 @@ In our scenario, two commits had been added to `master` by our teammates since w
 
 ![updated master history](https://i.imgur.com/kv7s6gX.png)
 
-Had we not told github to keep our local copy of `master` in sync with the Github copy of `master` when we ran `git pull origin master` by first running `git branch --set-upstream-to=origin/master master`, your history would look like this:
+Had we not told git to keep our local copy of `master` in sync with the Github copy of `master` by running `git branch --set-upstream-to=origin/master master`, your history would now look like this:
 
 ![out of sync master](https://i.imgur.com/GvcykMp.png)
 
