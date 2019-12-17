@@ -60,14 +60,14 @@ git checkout <feature-branch-name>                  # switch back to your featur
 
 git rebase master                                   # rebase your changes
 
-# you may be done now if there were no merge conflicts. Otherwise:
+# you may be done now if there were no rebase conflicts. Otherwise:
 
-git status                                          # take a look at the merge conflicts
+git status                                          # take a look at the rebase conflicts
 
 # use your editor to resolve the conflicts
 
-git add <filename-with-resolved-merge-conflicts>    # mark the conflicting files as
-git add <filename-with-resolved-merge-conflicts>    # resolved
+git add <filename-with-resolved-rebase-conflicts>   # mark the conflicting files as
+git add <filename-with-resolved-rebase-conflicts>   # resolved
 
 git rebase --continue
 ```
