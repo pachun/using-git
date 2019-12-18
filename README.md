@@ -217,12 +217,12 @@ git pull origin master                              # update your local copy of 
 git checkout -b <feature-branch-name>               # create a new branch for your feature
 
 # 1. make changes
-# 2. commit changes to feature-branch-name
+# 2. commit changes to <feature-branch-name>
 # 3. repeat until your feature is done
 
 # Ready to open a Pull Request?
 
-git checkout feature-branch-name                    # make sure you're on your feature branch
+git checkout <feature-branch-name>                  # make sure you're on your feature branch
 
 git rebase -i head~<number-of-commits-you-made>     # squash your commits into a single commit
 
@@ -262,7 +262,7 @@ git push origin <feature-branch-name>               # push your branch up to Git
 # Ready to merge?
 
 git checkout master
-git merge feature-branch-name
+git merge <feature-branch-name>
 git push origin master
 
 ```
