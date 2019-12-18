@@ -14,11 +14,11 @@ This guide is only intended to help teach the _how_.
 
 [Additionally, if you don’t care about the nitty gritty, you can skip to the bottom and read the gist of things](#tl%3Bdr).
 
-## GITX
+## Viewing Your Repository's History
 
-The best way to learn how Git works is by seeing the commit graph.
+The best way to learn how git works is by seeing the commit graph.
 
-[Gitx is what I use to see git's commit graph](https://rowanj.github.io/gitx/).
+[GitX is what I use to see git's commit graph](https://rowanj.github.io/gitx/).
 
 If you want to try it:
 
