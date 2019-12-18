@@ -64,11 +64,15 @@ git checkout master
 git pull origin master
 ```
 
-In our scenario, two commits had been added to `master` by our teammates since we last ran `git pull origin master` (SHAs: `6cdf6dd` & `a137df2`) and now since we've ran `git pull origin master` again, our local copy is up to date with what is on Github.
+In our scenario, two commits had been added to `master` by our teammates since we last ran `git pull origin master` (SHAs: `6cdf6dd` & `a137df2`):
 
 ![updated master history](https://i.imgur.com/kv7s6gX.png)
 
-Now let's make our new feature branch:
+Since we've just ran `git pull origin master` again, our local copy is up to date with what is on Github.
+
+We're ready to start making changes.
+
+Let's make our new feature branch:
 
 ```bash
 git checkout master             # point git's head at master
