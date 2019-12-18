@@ -47,17 +47,7 @@ To begin working on this feature, let's take a look at the current state of our 
 
 ![initial git history](https://i.imgur.com/pKmeyZn.png)
 
-The first thing you should do when beginning a new feature is make sure you have the most up-to-date copy of `master`.
-
-To do this, first run:
-
-```bash
-git branch --set-upstream-to=origin/master master
-```
-
-This tells git to keep your local copy of `master` in sync with the updated copy of `master` which you will pull down from `origin` (Github). You only need to run this once per Github repository, not every time you develop a new feature.
-
-Now let's pull down an updated copy of `master` from Github:
+The first thing you should do when beginning a new feature is make sure you have the most up-to-date copy of `master`. Let's pull down an updated copy of `master` from Github:
 
 ```bash
 git checkout master
@@ -67,12 +57,6 @@ git pull origin master
 In our scenario, two commits had been added to `master` by our teammates since we last ran `git pull origin master` (SHAs: `6cdf6dd` & `a137df2`) and now since we've ran `git pull origin master` again, our local copy is up to date with what is on Github.
 
 ![updated master history](https://i.imgur.com/kv7s6gX.png)
-
-Had we not told git to keep our local copy of `master` in sync with the Github copy of `master` by running `git branch --set-upstream-to=origin/master master`, your history would now look like this:
-
-![out of sync master](https://i.imgur.com/GvcykMp.png)
-
-This will lead to problems, so be sure to run `git branch --set-upstream-to=origin/master master`. (Again, you only need to run this once for each Github repository; not every time you begin a new feature).
 
 Now let's make our new feature branch:
 
@@ -117,7 +101,7 @@ This will automatically open a new file, where you're given the opportunity to w
 
 ![reword commit message prompt](https://i.imgur.com/kn3QRK2.png)
 
-See [how to write a git commit messages](https://chris.beams.io/posts/git-commit/) for how to best write these.
+See [how to write a git commit message](https://chris.beams.io/posts/git-commit/) for how to best write these.
 
 We'll settle on this:
 
@@ -131,7 +115,7 @@ Your git history should look like this:
 
 We're almost done.
 
-Before we open a pull request, let's make sure we're still working on top of the most up to date version of master:
+Before we open a pull request, let's make sure we're still working on top of the most up to date version of `master`:
 
 ```bash
 git checkout master
@@ -144,24 +128,24 @@ Now our history looks like this:
 
 ### Rebasing
 
-It looks like our teammates have made several changes to master since we began working on our bigger doctor-login feature...
+It looks like our teammates have made several changes to `master` since we began working on our bigger doctor-login feature...
 
-We want to change our commit's history to include all of master's history:
+We want to change our commit's history to include all of `master`s history:
 
 ![unrebased history explanation](https://i.imgur.com/C3UIXOS.png)
 
-This is when we _rebase_ our single commit onto `master`:
+It's time to _rebase_ our single commit onto the updated version of `master`:
 
 ```bash
 git checkout doctor-login
 git rebase master
 ```
 
-This is when you may encounter rebase conflicts if the team changed any of the same spots in any of the files which you made changes to in their recent commits in master:
+At this point, you may encounter rebase conflicts if you made a change to the same code that the team changed in their newer commits to `master`:
 
 ![rebase conflict](https://i.imgur.com/wIGvdU3.png)
 
-Let's open the conflicting file and resolve the conflictions:
+Let's open the conflicting file and resolve its conflicts:
 
 ![conflicting file content](https://i.imgur.com/MRgSRrM.png)
 
@@ -210,10 +194,6 @@ Avoid merge commits.
 
 ```bash
 cd <my_project_repo>                                # move into your project
-
-git branch --set-upstream-to=origin/master master   # keep local master in sync with
-                                                    # origin/master (Github's copy of master)
-                                                    # (only do this once per respository)
 
 git checkout master                                 # switch to the master branch
 
