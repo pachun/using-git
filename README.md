@@ -2,11 +2,19 @@
 
 The goal of this guide is to help teach you how to keep your repository's history clear.
 
+---
+
 ![linear git history](https://i.imgur.com/1W6bwyt.png)
+
+---
 
 Rather than something a bit less clear...
 
+---
+
 ![confusing git history](https://i.imgur.com/ye6ijuJ.png)
+
+---
 
 [You can read more about _why_ a linear history is desirable here](https://www.bitsnbites.eu/a-tidy-linear-git-history/).
 
