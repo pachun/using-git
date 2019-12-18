@@ -43,6 +43,8 @@ Now you can type the following within any git directory to see the commit graph.
 gitx
 ```
 
+I've included screenshots of GitX throughout the steps below.
+
 ## Beginning New Features
 
 Let's use an example.
