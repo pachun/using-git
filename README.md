@@ -20,7 +20,7 @@ Rather than something a bit less clear...
 
 This guide is only intended to help teach the _how_.
 
-[Additionally, if you don’t care about the nitty gritty, you can skip to the bottom and read the gist of things](#tl%3Bdr).
+[Additionally, if you don’t care about the nitty gritty, you can skip to the bottom and read the gist of things](#tldr).
 
 ## Viewing Your Repository's History
 
