@@ -8,82 +8,11 @@ Rather than something a bit less clear...
 
 ![confusing git history](https://i.imgur.com/ye6ijuJ.png)
 
-[You can read more about why a linear history is desirable here](https://www.bitsnbites.eu/a-tidy-linear-git-history/), but this guide is only intended to teach the _how_.
+[You can read more about _why_ a linear history is desirable here](https://www.bitsnbites.eu/a-tidy-linear-git-history/).
 
-## TL;DR
+This guide is only intended to help teach the _how_.
 
-> every merge commit is a potential source of a non-linear history
-
-Avoid merge commits.
-
-[There's a more in-depth explanation of each of the following steps below this section](#beginning-new-features).
-
-If you're just interested in getting started, here's what you need:
-
-```bash
-cd <my_project_repo>                                # move into your project
-
-git branch --set-upstream-to=origin/master master   # keep local master in sync with
-                                                    # origin/master (Github's copy of master)
-                                                    # (only do this once per respository)
-
-git checkout master                                 # switch to the master branch
-
-git pull origin master                              # update your local copy of master to be
-                                                    # Github's copy of master
-
-git checkout -b <feature-branch-name>               # create a new branch for your feature
-
-# 1. make changes
-# 2. commit changes to feature-branch-name
-# 3. repeat until your feature is done
-
-# Ready to open a Pull Request?
-
-git checkout feature-branch-name                    # make sure you're on your feature branch
-
-git rebase -i head~<number-of-commits-you-made>     # squash your commits into a single commit
-
-# An interactive rebase prompt opens in a file:
-#   1. Change the first "pick" to "r"
-#   2. Change all subsequent "pick"s to "f"s
-#   3. Save and close the file
-
-# A commit message prompt opens in a file:
-#   1. Write the commit message for your feature's single commit
-#   2. Save and close the file
-
-git checkout master                                 # switch back to master
-
-git pull origin master                              # update local copy of master to be
-                                                    # Github's copy of master
-
-git checkout <feature-branch-name>                  # switch back to your feature branch
-
-git rebase master                                   # rebase your changes
-
-# you may be done now if there were no rebase conflicts. Otherwise:
-
-git status                                          # take a look at the rebase conflicts
-
-# use your editor to resolve the conflicts
-
-git add <filename-with-resolved-rebase-conflicts>   # mark the conflicting files as
-git add <filename-with-resolved-rebase-conflicts>   # resolved
-
-git rebase --continue
-
-git push origin <feature-branch-name>               # push your branch up to Github
-
-# open a pull request on github
-
-# Ready to merge?
-
-git checkout master
-git merge feature-branch-name
-git push origin master
-
-```
+[Additionally, if you don’t care about the nitty gritty, you can skip to the bottom and read the gist of things](#tl%3Bdr).
 
 ## GITX
 
@@ -266,3 +195,80 @@ The pull request page will update to indicate that your branch was merged!
 Here's your beautifully updated git history:
 
 ![completed history](https://i.imgur.com/CRJbKNT.png)
+
+## TL;DR
+
+If you don’t care about the nitty gritty, this section is for you.
+
+[If you'd like step-by-step explanations, head over here](#beginning-new-features).
+
+**TL;DR**
+
+> Every merge commit is the potential source of a non-linear history.
+
+Avoid merge commits.
+
+```bash
+cd <my_project_repo>                                # move into your project
+
+git branch --set-upstream-to=origin/master master   # keep local master in sync with
+                                                    # origin/master (Github's copy of master)
+                                                    # (only do this once per respository)
+
+git checkout master                                 # switch to the master branch
+
+git pull origin master                              # update your local copy of master to be
+                                                    # Github's copy of master
+
+git checkout -b <feature-branch-name>               # create a new branch for your feature
+
+# 1. make changes
+# 2. commit changes to feature-branch-name
+# 3. repeat until your feature is done
+
+# Ready to open a Pull Request?
+
+git checkout feature-branch-name                    # make sure you're on your feature branch
+
+git rebase -i head~<number-of-commits-you-made>     # squash your commits into a single commit
+
+# An interactive rebase prompt opens in a file:
+#   1. Change the first "pick" to "r"
+#   2. Change all subsequent "pick"s to "f"s
+#   3. Save and close the file
+
+# A commit message prompt opens in a file:
+#   1. Write the commit message for your feature's single commit
+#   2. Save and close the file
+
+git checkout master                                 # switch back to master
+
+git pull origin master                              # update local copy of master to be
+                                                    # Github's copy of master
+
+git checkout <feature-branch-name>                  # switch back to your feature branch
+
+git rebase master                                   # rebase your changes
+
+# you may be done now if there were no rebase conflicts. Otherwise:
+
+git status                                          # take a look at the rebase conflicts
+
+# use your editor to resolve the conflicts
+
+git add <filename-with-resolved-rebase-conflicts>   # mark the conflicting files as
+git add <filename-with-resolved-rebase-conflicts>   # resolved
+
+git rebase --continue
+
+git push origin <feature-branch-name>               # push your branch up to Github
+
+# open a pull request on github
+
+# Ready to merge?
+
+git checkout master
+git merge feature-branch-name
+git push origin master
+
+```
