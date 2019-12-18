@@ -1,16 +1,14 @@
 # Git Process
 
-The goal is to teach you how to arrive at a linear git history, which looks like this:
+The goal of this guide is to help teach you how to keep your repository's history clear.
 
 ![linear git history](https://i.imgur.com/1W6bwyt.png)
 
-Rather than something which looks like this:
+Rather than something a bit less clear...
 
 ![confusing git history](https://i.imgur.com/ye6ijuJ.png)
 
-This post doesn't explain why this is helpful. It only shows you how to acheive it.
-
-[Why keep a linear git history?](https://www.bitsnbites.eu/a-tidy-linear-git-history/)
+[You can read more about why a linear history is desirable here](https://www.bitsnbites.eu/a-tidy-linear-git-history/), but this guide is only intended to teach the _how_.
 
 ## TL;DR
 
