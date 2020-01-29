@@ -180,6 +180,10 @@ You're all set!
 
 Push up your branch and open a pull request.
 
+Aside:
+
+Do not include the Jira ticket number in your _commit message's title_. Once you open a pull request, edit _the PR title_ to include the Jira ticket number. You can include the ticket number in your commit's _message_ if you'd like (and you should). Just don't put it in the commit title.
+
 ### Merging into master
 
 ```bash
